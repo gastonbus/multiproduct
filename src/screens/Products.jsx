@@ -6,10 +6,11 @@ import ProductItem from "../components/ProductItem";
 import Search from "../components/Search";
 import { colors } from "../theme/colors";
 
-const Products = ({ category }) => {
+
+const Products = ({ category, setSelectedCategory }) => {
 	const [searchText, setSearchText] = useState("");
 
-	const [filteredProducts, setFilteredProducts] = useState([]);
+	const [filteredProductsByCategory, setFilteredProducts] = useState([]);
 
 	useEffect(() => {
 		setFilteredProducts(
@@ -23,9 +24,9 @@ const Products = ({ category }) => {
 
 	return (
 		<View style={styles.productsContainer}>
-			<Header title="Productos" />
+			<Header title="Productos" setSelectedCategory={setSelectedCategory}/>
 			<Search searchText={searchText} setSearchText={setSearchText} />
-			<View style={{ flex: 1 }}>
+			<View style={styles.flatListContainer}>
 				<FlatList
 					data={filteredProducts}
 					keyExtractor={(item) => item.id}
@@ -40,6 +41,9 @@ export default Products;
 
 const styles = StyleSheet.create({
 	productsContainer: {
+		flex: 1,
+	},
+	flatListContainer: {
 		flex: 1,
 	}
 });

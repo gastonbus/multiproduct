@@ -8,8 +8,11 @@ import Search from "./src/components/Search";
 import Products from "./src/screens/Products";
 import { useFonts } from "expo-font";
 import { fonts } from "./src/theme/fonts";
+import { useState } from "react";
 
 export default function App() {
+
+	const [selectedCategory, setSelectedCategory] = useState(null);
 
 	const [fontsLoaded] = useFonts(fonts);
 
@@ -19,9 +22,13 @@ export default function App() {
 	
 	return (
 		<SafeAreaView style={styles.mainContainer}>
-			{/* <Home /> */}
+			{
+				selectedCategory === null ?
+				<Home setSelectedCategory={setSelectedCategory} />
+				:
+				<Products category={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+			}
       {/* <Search /> */}
-      <Products category="tops"/>
 		</SafeAreaView>
 	);
 }

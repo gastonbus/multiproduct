@@ -4,11 +4,11 @@ import Header from "../components/Header";
 import Categories from "../components/Categories";
 import Search from "../components/Search";
 
-const Home = () => {
+const Home = ({setSelectedCategory}) => {
 	return (
 		<View>
-			<Header title="Categorias" />
-			<Categories />
+			<Header title={"Categorias"} setSelectedCategory={setSelectedCategory}/>
+			<Categories setSelectedCategory={setSelectedCategory} />
 		</View>
 	);
 };
