@@ -6,22 +6,28 @@ import Categories from "./src/components/Categories";
 import Home from "./src/screens/Home";
 import Search from "./src/components/Search";
 import Products from "./src/screens/Products";
+import { useFonts } from "expo-font";
+import { fonts } from "./src/theme/fonts";
 
 export default function App() {
+
+	const [fontsLoaded] = useFonts(fonts);
+
+	if (!fontsLoaded) {
+		return null;
+	}
+	
 	return (
-		<SafeAreaView>
+		<SafeAreaView style={styles.mainContainer}>
 			{/* <Home /> */}
       {/* <Search /> */}
-      <Products category="smartphones"/>
+      <Products category="tops"/>
 		</SafeAreaView>
 	);
 }
 
 const styles = StyleSheet.create({
-	container: {
+	mainContainer: {
 		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-	},
+	}
 });

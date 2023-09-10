@@ -7,7 +7,7 @@ import Search from "../components/Search";
 const Home = () => {
 	return (
 		<View>
-			<Header title="Header" />
+			<Header title="Categorias" />
 			<Categories />
 		</View>
 	);
