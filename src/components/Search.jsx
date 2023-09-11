@@ -25,6 +25,7 @@ export default Search;
 const styles = StyleSheet.create({
 	container: {
 		flexDirection: "row",
+		flex: 0.05,
 		justifyContent: "center",
 		alignItems: "center",
 		borderBottomWidth: 1,

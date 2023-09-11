@@ -6,7 +6,7 @@ import Search from "../components/Search";
 
 const Home = ({setSelectedCategory}) => {
 	return (
-		<View>
+		<View style={{flex: 1}}>
 			<Header title={"Categorias"} setSelectedCategory={setSelectedCategory}/>
 			<Categories setSelectedCategory={setSelectedCategory} />
 		</View>

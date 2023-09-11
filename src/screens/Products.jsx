@@ -10,7 +10,7 @@ import { colors } from "../theme/colors";
 const Products = ({ category, setSelectedCategory }) => {
 	const [searchText, setSearchText] = useState("");
 
-	const [filteredProductsByCategory, setFilteredProducts] = useState([]);
+	const [filteredProducts, setFilteredProducts] = useState([]);
 
 	useEffect(() => {
 		setFilteredProducts(
@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	flatListContainer: {
-		flex: 1,
+		flex: 0.8,
 	}
 });

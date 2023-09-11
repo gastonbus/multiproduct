@@ -5,7 +5,7 @@ import CategoryItem from "./CategoryItem";
 
 const Categories = ({setSelectedCategory}) => {
 	return (
-		<View>
+		<View style={{flex: 0.85}}>
 			<FlatList
 				data={categories}
 				keyExtractor={(item) => item}
