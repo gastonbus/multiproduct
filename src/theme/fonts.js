@@ -1,5 +1,9 @@
 export const fonts = {
-  Josefin: require('../../assets/fonts/Josefin_Sans/static/JosefinSans-Bold.ttf'),
-  Lobster: require('../../assets/fonts/Lobster/Lobster-Regular.ttf'),
-  PlayFair: require('../../assets/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf'),
+  GlutenThin: require('../../assets/fonts/Gluten/Gluten-Thin.ttf'),
+  GlutenExtraLight: require('../../assets/fonts/Gluten/Gluten-ExtraLight.ttf'),
+  GlutenLight: require('../../assets/fonts/Gluten/Gluten-Light.ttf'),
+  GlutenRegular: require('../../assets/fonts/Gluten/Gluten-Regular.ttf'),
+  GlutenBold: require('../../assets/fonts/Gluten/Gluten-Bold.ttf'),
+  GlutenExtraBold: require('../../assets/fonts/Gluten/Gluten-ExtraBold.ttf'),
+  ShareTechRegular: require('../../assets/fonts/ShareTech/ShareTech-Regular.ttf'),
 }

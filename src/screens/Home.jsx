@@ -1,15 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import Categories from "../components/Categories";
-import Search from "../components/Search";
 
-const Home = ({setSelectedCategory}) => {
+
+const Home = () => {
 	return (
-		<View style={{flex: 1}}>
-			<Header title={"Categorias"} setSelectedCategory={setSelectedCategory}/>
-			<Categories setSelectedCategory={setSelectedCategory} />
-		</View>
+		<SafeAreaView style={{flex: 1}}>
+			<Header title={"Categorias"} />
+			<Categories />
+		</SafeAreaView>
 	);
 };
 
