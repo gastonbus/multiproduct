@@ -7,8 +7,6 @@ import { AntDesign } from "@expo/vector-icons";
 
 const ProductDetails = ({route}) => {
 
-  console.log(route.params);
-
   const { product } = route.params;
 
 	// const product = products.find((elem) => elem.id === id);
