@@ -18,13 +18,13 @@ const ProductDetails = ({route}) => {
 
 	for (let i = 0; i < productRatingRounded; i++) {
 		filledStars.push(
-			<AntDesign name="star" size={24} color={colors.lightOrange} />
+			<AntDesign key={i} name="star" size={24} color={colors.lightOrange} />
 		);
 	}
 
 	for (let i = 0; i < 5 - productRatingRounded; i++) {
 		outlinedStars.push(
-			<AntDesign name="staro" size={24} color={colors.lightOrange} />
+			<AntDesign key={i} name="staro" size={24} color={colors.lightOrange} />
 		);
 	}
 
@@ -66,8 +66,9 @@ const ProductDetails = ({route}) => {
 					<Text style={styles.productRating}>{product.rating}</Text>
 				</View>
 				<Button
-					onPress={() => console.log('Comprar ', product.title)}
+					onPress={() => console.log('Comprar', product.title)}
 					title="Comprar"
+					color={colors.darkGreen}
 				/>
 			</View>
 		</SafeAreaView>
