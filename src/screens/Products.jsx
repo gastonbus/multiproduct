@@ -1,12 +1,15 @@
 import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
-import { products } from "../data/products";
 import ProductItem from "../components/ProductItem";
 import Search from "../components/Search";
+import { useSelector } from "react-redux";
 
 
 const Products = ({ route }) => {
+
+	const products = useSelector(state => state.homeSlice.allProducts);
+	const filteredProductsByCategory = useSelector(state => state.homeSlice.filteredProductsByCategory);
 
 	const {category} = route.params;
 
@@ -15,9 +18,7 @@ const Products = ({ route }) => {
 	const [filteredProducts, setFilteredProducts] = useState([]);
 
 	useEffect(() => {
-		setFilteredProducts(
-			products.filter((product) => product.category === category)
-		);
+		setFilteredProducts(filteredProductsByCategory);
 
 		if (searchText) {
 		  setFilteredProducts(products.filter(product => product.title.toLowerCase().includes(searchText.toLowerCase()) && product.category === category));

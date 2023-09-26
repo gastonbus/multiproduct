@@ -6,7 +6,7 @@ import ProductDetails from "../screens/ProductDetails";
 
 const Stack = createNativeStackNavigator();
 
-const RouteNavigation = () => {
+const RootNavigation = () => {
 	return (
 		<Stack.Navigator initialRouteName="home" screenOptions={{headerShown: false}}>
 			<Stack.Screen name="home" component={Home} />
@@ -16,4 +16,4 @@ const RouteNavigation = () => {
 	);
 };
 
-export default RouteNavigation;
+export default RootNavigation;

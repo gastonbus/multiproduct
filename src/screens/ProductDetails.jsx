@@ -1,13 +1,19 @@
-import { Button, Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+	Image,
+	Pressable,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	View,
+} from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import { products } from "../data/products";
 import { colors } from "../theme/colors";
 import { AntDesign } from "@expo/vector-icons";
 
-const ProductDetails = ({route}) => {
-
-  const { product } = route.params;
+const ProductDetails = ({ route }) => {
+	const { product } = route.params;
 
 	// const product = products.find((elem) => elem.id === id);
 
@@ -65,11 +71,12 @@ const ProductDetails = ({route}) => {
 					</View>
 					<Text style={styles.productRating}>{product.rating}</Text>
 				</View>
-				<Button
-					onPress={() => console.log('Comprar', product.title)}
-					title="Comprar"
-					color={colors.darkGreen}
-				/>
+				<Pressable
+					onPress={() => console.log("Comprar", product.title)}
+					style={styles.purchaseButton}
+				>
+					<Text style={styles.purchaseButtonText}>Comprar</Text>
+				</Pressable>
 			</View>
 		</SafeAreaView>
 	);
@@ -145,4 +152,17 @@ const styles = StyleSheet.create({
 		marginLeft: 15,
 		color: colors.lightOrange,
 	},
+	purchaseButton: {
+		width: "40%",
+		height: "15%",
+		backgroundColor: colors.darkGreen,
+		alignItems: "center",
+		justifyContent: "center",
+		borderWidth: 1,
+		borderRadius: 20
+	},
+	purchaseButtonText: {
+		fontSize: 24,
+		fontWeight: "700",		
+	}
 });

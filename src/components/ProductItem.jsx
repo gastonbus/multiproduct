@@ -2,13 +2,23 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { colors } from "../theme/colors";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { setProduct } from "../redux/slices/homeSlice";
 
 const ProductItem = ({ product }) => {
 
-	const {navigate} = useNavigation();
+	const dispatch = useDispatch();
+
+	const { navigate } = useNavigation();
+
+	const onPressItem = () => {
+		dispatch(setProduct(product));
+		navigate("productDetails", {product})
+	}
+
 
 	return (
-		<Pressable onPress={() => navigate("productDetails", {product})}>
+		<Pressable onPress={() => onPressItem()}>
 			<View style={styles.container}>
 				<View style={styles.productImageContainer}>
 					<Image
