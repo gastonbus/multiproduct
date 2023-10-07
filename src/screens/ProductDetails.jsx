@@ -1,7 +1,6 @@
 import {
 	Image,
 	Pressable,
-	SafeAreaView,
 	StyleSheet,
 	Text,
 	View,
@@ -11,6 +10,7 @@ import Header from "../components/Header";
 import { products } from "../data/products";
 import { colors } from "../theme/colors";
 import { AntDesign } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const ProductDetails = ({ route }) => {
 	const { product } = route.params;

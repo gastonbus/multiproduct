@@ -9,11 +9,11 @@ const ProductItem = ({ product }) => {
 
 	const dispatch = useDispatch();
 
-	const { navigate } = useNavigation();
+	const navigation = useNavigation();
 
 	const onPressItem = () => {
 		dispatch(setProduct(product));
-		navigate("productDetails", {product})
+		navigation.navigate("productDetails", {product})
 	}
 
 

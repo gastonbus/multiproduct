@@ -9,11 +9,11 @@ const CategoryItem = ({category}) => {
 
 	const dispatch = useDispatch();
 
-	const { navigate } = useNavigation();
+	const navigation = useNavigation();
 
 	const onPressItem = () => {
 		dispatch(setCategory(category));
-		navigate("products", {category});
+		navigation.navigate("products", {category});
 	}
 
 	return (

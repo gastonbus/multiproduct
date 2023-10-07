@@ -1,10 +1,10 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { useFonts } from "expo-font";
 import { fonts } from "./src/theme/fonts";
-import { NavigationContainer } from "@react-navigation/native";
-import TabNav from "./src/navigation/TabNav";
 import { Provider } from "react-redux";
 import { store } from "./src/redux/store";
+import MainNav from "./src/navigation/MainNav";
+
 
 export default function App() {
 	const [fontsLoaded] = useFonts(fonts);
@@ -15,10 +15,9 @@ export default function App() {
 
 	return (
 		<Provider store={store}>
-			<NavigationContainer style={styles.mainContainer}>
-				{/* <RootNavigation /> */}
-				<TabNav />
-			</NavigationContainer>
+			<View style={styles.mainContainer}>
+				<MainNav />
+			</View>
 		</Provider>
 	);
 }

@@ -1,9 +1,10 @@
-import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProductItem from "../components/ProductItem";
 import Search from "../components/Search";
 import { useSelector } from "react-redux";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const Products = ({ route }) => {
