@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Profile from "../screens/Profile";
 import RootNavigation from "./RootNavigation";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../theme/colors";
+import ProfileNav from "./ProfileStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,8 +21,8 @@ const TabNav = () => {
 				}}
 			/>
 			<Tab.Screen
-				name="profile"
-				component={Profile}
+				name="profileNav"
+				component={ProfileNav}
 				options={{
 					tabBarIcon: ({focused}) => (
 						<Ionicons name="person-sharp" size={28} color={focused ? "black" : colors.lightGray} />

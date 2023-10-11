@@ -10,7 +10,7 @@ const Home = () => {
 
 	const datosFirebase = useGetCategoriesQuery();
 
-	console.log(JSON.stringify(datosFirebase.data, null, " "));
+	// console.log(JSON.stringify(datosFirebase.data, null, " "));
 
 	return (
 		<SafeAreaView style={{flex: 1}}>

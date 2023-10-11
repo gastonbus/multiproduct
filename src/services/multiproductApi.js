@@ -10,8 +10,18 @@ export const multiproductApi = createApi({
     }),
     getProducts: builder.query({
       query: () => "products.json",
-    })
+    }),
+    getImage: builder.query({
+      query: () => "image.json",
+    }),
+    saveImage: builder.mutation({
+      query: (image) => ({
+        url: "image.json",
+        method: "PUT",
+        body: image,
+      }),
+    }),
   })
 })
 
-export const { useGetCategoriesQuery, useGetProductsQuery } = multiproductApi;
+export const { useGetCategoriesQuery, useGetProductsQuery, useGetImageQuery, useSaveImageMutation } = multiproductApi;
